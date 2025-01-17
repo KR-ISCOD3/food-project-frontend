@@ -1,7 +1,15 @@
-import { FormEvent, useState } from "react";
+import { FoodContext } from "../store/FoodContext";
+import { FormEvent, useContext,useEffect,useState } from "react";
+import { useAuth } from "../store/ReactAuthContext";
+import { useNavigate } from "react-router-dom";
 
 function CheckOut() {
-  const [paymentOption, setPaymentOption] = useState("cashOut");
+  const foodContext = useContext(FoodContext);
+  const {user} = useAuth();
+  const navigate = useNavigate();
+  
+  const {cart,totalPrice} = foodContext;
+   const [paymentOption, setPaymentOption] = useState("cashOut");
 
   const handlePaymentChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPaymentOption(e.target.value);
@@ -15,6 +23,11 @@ function CheckOut() {
   // const messageConfirm = () => {
 
   // }
+  useEffect(()=>{
+    if(!user){
+      navigate('/signin')
+    }
+  },[navigate, user])
 
   return (
     <div className="container mb-5" style={{ paddingTop: "120px" }}>
@@ -234,48 +247,39 @@ function CheckOut() {
           <div className="border p-md-4 rounded-3">
             <h4 className="text-center">Order Summary</h4>
             <table className="table align-middle border-bottom">
-              <tr className="align-middle">
-                <td className="d-flex align-items-center">
-                  <div
-                    style={{ width: "50px", height: "50px" }}
-                    className="rounded-circle overflow-hidden p-0 bg-body-secondary"
-                  >
-                    <img src="" className="w-100 h-100 object-fit-cover" />
-                  </div>
-                  <div className="ms-2" style={{ fontSize: 14 }}>
-                    <p className="m-0">Name</p>
-                    <p className="m-0 text-secondary">dinner</p>
-                    <p className="m-0 text-secondary">$0.00</p>
-                  </div>
-                </td>
-                <td className="align-middle text-end">
-                  <div>
-                    <p className="text-secondary m-0">x1</p>
-                    <p className="fs-6 text-success m-0">$0.00</p>
-                  </div>
-                </td>
-              </tr>
-              <tr className="align-middle">
-                <td className="d-flex align-items-center">
-                  <div
-                    style={{ width: "50px", height: "50px" }}
-                    className="rounded-circle overflow-hidden p-0 bg-body-secondary"
-                  >
-                    <img src="" className="w-100 h-100 object-fit-cover" />
-                  </div>
-                  <div className="ms-2" style={{ fontSize: 14 }}>
-                    <p className="m-0">Name</p>
-                    <p className="m-0 text-secondary">dinner</p>
-                    <p className="m-0 text-secondary">$0.00</p>
-                  </div>
-                </td>
-                <td className="align-middle text-end">
-                  <div>
-                    <p className="text-secondary m-0">x1</p>
-                    <p className="fs-6 text-success m-0">$0.00</p>
-                  </div>
-                </td>
-              </tr> 
+
+            {cart.length > 0 ? (
+                cart.map((item, index) => (
+                  <tr className="align-middle" key={index}>
+                    <td className="d-flex align-items-center">
+                      <div
+                        style={{ width: "50px", height: "50px" }}
+                        className="rounded-circle overflow-hidden p-0 bg-body-secondary"
+                      >
+                        <img src={item.image} className="w-100 h-100 object-fit-cover" />
+                      </div>
+                      <div className="ms-2" style={{ fontSize: 14 }}>
+                        <p className="m-0">{item.name}</p>
+                        <p className="m-0 text-secondary">{item.category}</p>
+                        <p className="m-0 text-secondary">${item.price}</p>
+                      </div>
+                    </td>
+                    <td className="align-middle text-end">
+                      <div>
+                        <p className="text-secondary m-0">x{item.quantity}</p>
+                        <p className="fs-6 text-success m-0">${item.subtotal.toFixed(2)}</p>
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td className="text-center">
+                    No items in the cart.
+                  </td>
+                </tr>
+              )}
+        
             </table>
             <div>
               <div className="d-flex justify-content-between">
@@ -284,7 +288,7 @@ function CheckOut() {
               </div>
               <div className="d-flex justify-content-between">
                 <p className="m-0 fw-bold">Total to Pay:</p>
-                <p className="m-0 fw-bold">$0.00</p>
+                <p className="m-0 fw-bold">${totalPrice.toFixed(2)}</p>
               </div>
             </div>
           </div>
