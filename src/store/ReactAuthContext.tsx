@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect } from "react";
 import axios from "axios";
 import { googleLogout } from "@react-oauth/google";
+import { useNavigate } from "react-router-dom";
 
 // Define the type for the user (adjust based on your user object structure)
 interface User {
@@ -28,6 +29,7 @@ interface AuthProviderProps {
 
 // Create the provider component
 export const ReactAuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState<User | null>(() => {
     // Load user from localStorage when the component initializes
     const storedUser = localStorage.getItem("user");
@@ -56,6 +58,7 @@ export const ReactAuthProvider: React.FC<AuthProviderProps> = ({ children }) => 
       // await axios.post("http://localhost:3000/api/auth/logout", { withCredentials: true });
       googleLogout();
       setUser(null);
+      navigate("/");
       // Remove the user from localStorage on logout
       localStorage.removeItem("user");
     } catch (error) {
