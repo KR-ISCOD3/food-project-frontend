@@ -2,7 +2,17 @@ import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { FoodContext } from "../store/FoodContext"; // Import FoodContext
-import { Food } from "../types/Food";
+// import { Food } from "../types/Food.ts";
+
+interface Food {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+  khmerName: string; 
+};
+
 
 function BreakFastFood() {
   const { foods, cart, loading, error, addToCart } = useContext(FoodContext); // Access cart data from context

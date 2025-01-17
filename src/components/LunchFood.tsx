@@ -3,12 +3,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { FoodContext } from "../store/FoodContext"; // Import FoodContext
 
-interface FoodItem {
+interface Food {
   id: number;
   name: string;
   category: string;
   price: number;
   image: string;
+  khmerName: string; 
 }
 
 function LunchFood() {
@@ -17,9 +18,9 @@ function LunchFood() {
   const navigate = useNavigate(); // Navigate hook
 
   // Show popup temporarily after adding to cart
-  const handleAddToCart = (food: FoodItem) => {
+  const handleAddToCart = (food: Food) => {
     // Check if the product is already in the cart
-    const isAlreadyInCart = cart.some((item: FoodItem) => item.id === food.id);
+    const isAlreadyInCart = cart.some((item: Food) => item.id === food.id);
 
     if (!isAlreadyInCart) {
       addToCart(food); // Add item to cart
@@ -66,7 +67,7 @@ function LunchFood() {
   }
 
   const lunchFoods = foods
-    .filter((food: FoodItem) => food.category === "lunch")
+    .filter((food: Food) => food.category === "lunch")
     .slice(0, 4);
 
   return (
@@ -92,7 +93,7 @@ function LunchFood() {
       </div>
 
       <div className="d-flex justify-content-start overflow-x-scroll m-0 my-4">
-        {lunchFoods.map((food: FoodItem) => (
+        {lunchFoods.map((food: Food) => (
           <div key={food.id} className="col-9 col-md-5 col-lg-3 px-lg-4 mx-2 mx-md-3 mx-lg-0">
             <div className="card overflow-hidden">
               <div style={{ height: 220 }} className="p-3 border-success">

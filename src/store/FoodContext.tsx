@@ -6,7 +6,7 @@ interface Food {
   id: number;
   name: string;
   price: number;
-  description: string;
+  description?: string;
   image: string;
   category: string;
   khmerName: string; // Added Khmer name field

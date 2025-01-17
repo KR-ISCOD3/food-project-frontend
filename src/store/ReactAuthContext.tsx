@@ -7,7 +7,7 @@ interface User {
   id: string;
   name: string;
   email: string;
-  picture?: string; // Optional property
+  avatar?: string; // Optional property
 }
 
 // Define the context type

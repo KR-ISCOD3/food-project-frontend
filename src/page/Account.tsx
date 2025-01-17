@@ -17,7 +17,7 @@ function Account() {
     zip: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -140,7 +140,7 @@ function Account() {
                 id="city"
                 className="form-select bg-secondary-subtle shadow-none border-0"
                 value={formData.city}
-                onChange={handleChange}
+                onChange={()=>handleChange}
               >
                 <option value="">Select a city</option>
                 <option value="phnom-penh">Phnom Penh</option>
@@ -172,7 +172,7 @@ function Account() {
                 id="province"
                 className="form-select bg-secondary-subtle shadow-none border-0"
                 value={formData.province}
-                onChange={handleChange}
+                onChange={()=>handleChange}
               >
                 <option value="">Select a province</option>
                 <option value="phnom-penh">Phnom Penh</option>
