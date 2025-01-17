@@ -228,7 +228,7 @@ function Account() {
           <button className="px-5 btn btn-success col-12 col-lg-2">Save</button>
         </div>
         <button
-          className="btn border-0 border-top text-center text-light w-100 fs-6 bg-secondary-subtle text-dark mt-3"
+          className="btn border-0 border-top text-center text-light w-100 fs-6 bg-secondary-subtle text-dark mt-3 d-lg-none"
           onClick={() => handleLogout()} // Log out the user
         >
           <MdLogout className="me-2 fs-5" />
