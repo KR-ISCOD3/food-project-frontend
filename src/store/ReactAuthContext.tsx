@@ -53,7 +53,7 @@ export const ReactAuthProvider: React.FC<AuthProviderProps> = ({ children }) => 
   // Function to log out the user
   const logout = async () => {
     try {
-      await axios.post("http://localhost:3000/api/auth/logout", {}, { withCredentials: true });
+      // await axios.post("http://localhost:3000/api/auth/logout", { withCredentials: true });
       googleLogout();
       setUser(null);
       // Remove the user from localStorage on logout
