@@ -19,7 +19,7 @@ function SignIn() {
 
     try {
       // const response = await axios.post("http://localhost:3000/api/auth/login", { email, password });
-      const response = await axios.post("hhttps://foot-app-backend.onrender.com/api/auth/login", { email, password });
+      const response = await axios.post("https://foot-app-backend.onrender.com/api/auth/login", { email, password });
 
       if (response.status === 200) {
         const userData = response.data.user;
@@ -38,7 +38,8 @@ function SignIn() {
 
   const handleSuccess = async (response: any) => {
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/login", { token: response.credential });
+      // const res = await axios.post("http://localhost:3000/api/auth/login", { token: response.credential });
+      const res = await axios.post("https://foot-app-backend.onrender.com/api/auth/login", { token: response.credential });
 
       if (res.status === 200) {
         setUser(res.data.user);
