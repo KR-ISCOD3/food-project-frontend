@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Fredoka:wght@300..700&family=Siemreap&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Siemreap&display=swap');
+// ------------------------ font family ------------------------
+.font-afacad {
+  font-family: "Afacad Flux", serif;
+}
+.font-logo {
+  font-family: "Righteous", sans-serif;
+}
+.font-siemreap{
+    font-family: "Siemreap", sans-serif;
+}
+
+// ------------------------- color -----------------------------
+.bg-green {
+  background-color: #1cac78 !important;
+}
+.text-green {
+  color: #1cac78 !important;
+}
+// ---------------------- text limit ---------------------------
+.text-3line {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.text-1line {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

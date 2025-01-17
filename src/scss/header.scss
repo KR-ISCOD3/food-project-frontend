@@ -1,0 +1,28 @@
+.user-account{
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+}
+
+//----------------- Navbar -----------------
+.transition{
+    transition: 0.4s ease-in-out !important;
+}
+.navbar{
+    transition: background-color 0.2s ease-in-out;
+    &.navbar-scroll{
+        background-color: #1CAC78 !important;
+        color: white!important;
+    }
+}
+
+//------------- Responsive-Offcanvas ------------
+@media (max-width:576px) {
+    .offcanvas{
+        width: 80% !important;
+    }
+}
+
+li:hover{
+    cursor: pointer;
+}

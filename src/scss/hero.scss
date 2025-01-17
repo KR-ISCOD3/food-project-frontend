@@ -1,0 +1,16 @@
+.hero{
+    height:340px;
+    background: url(image/hero.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content-text{
+    background-color: rgba(45, 45, 45, 0.611);
+}
+
+// --------- Responsive -----------
+@media (max-width: 768px) {
+    .hero{
+        height: 300px;
+    }
+}
