@@ -22,9 +22,14 @@ import SignUp from "./page/SignUp.tsx";
 import { FoodProvider } from "./store/FoodContext.tsx"; // Import the FoodProvider
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { ReactAuthProvider } from "./store/ReactAuthContext.tsx";
+import Confirmed from "./page/Confirmed.tsx";
 
 // const domain = "kakveyaiythi.jp.auth0.com";  
 // const clientId = "naMzK8hnGplh0xIYagLwCYpLRVkXdsaf"; 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 createRoot(document.getElementById("root")!).render(
   // <StrictMode>
@@ -71,6 +76,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/page-account" element={<MobileSignin />} />
               <Route path="/my-account" element={<Account />} />
               <Route path="/checkout" element={<CheckOut />} />
+              <Route path="/confirmed" element={<Confirmed />} />
             </Route>
             <Route path="/*" element={<NotFound />} />
             <Route path="/signup" element={<SignUp />} />

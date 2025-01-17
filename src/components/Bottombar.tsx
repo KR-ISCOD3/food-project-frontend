@@ -24,7 +24,7 @@ const Offcanvas = () => {
     <div className="container-fluid position-relative p-0 d-xl-none" >
       <div className="fixed-bottom w-100 bg-green border-top" >
         <div className=" container-fluid px-0 py-3 col-md-8 ">
-          <ul className="nav justify-content-between">
+          <ul className="d-flex justify-content-between list-unstyled px-3">
             <li className="text-center">
               <NavLink to={"/"} className="nav-link py-0 text-light">
                   <FaHome className="fs-3 " /> 

@@ -3,8 +3,8 @@ import "../scss/serve.scss"
 function Serve() {
   return (
     <section className="container">
-      <div className="col-12 col-md-7 col-lg-6 text-center mx-auto mt-4">
-      <h4 className="m-0 text-green">How is works</h4>
+      <div data-aos="fade-up" className="col-12 col-md-7 col-lg-6 text-center mx-auto mt-4">
+        <h4 className="m-0 text-green">How is works</h4>
         <h2 className="m-0">What we serve</h2>
         <p className="text-secondary fs-5">
           Freshness and Quality You Can Trust, Delivered Straight to Your Door.
@@ -13,7 +13,7 @@ function Serve() {
         </p>
       </div>
       <div className="paddx d-flex justify-content-start m-0 text-center w-100 overflow-x-scroll" >  
-        <div className="col-6 col-md-4 my-3">
+        <div data-aos="fade-up" data-aos-delay="100" className="col-6 col-md-4 my-3">
           <div className="card text-center p-3 border-0">
             <div style={{height:120}}>
               <img src="image/bag.gif" alt="" className="w-100 h-100 object-fit-contain"/>
@@ -24,7 +24,7 @@ function Serve() {
             </div>
           </div>
         </div>
-        <div className="col-6 col-md-4 my-3">
+        <div data-aos="fade-up" data-aos-delay="200" className="col-6 col-md-4 my-3">
           <div className="card text-center p-3 border-0">
             <div style={{height:120}}>
               <img src="image/delievery.gif" alt="" className="w-100 h-100 object-fit-contain"/>
@@ -35,7 +35,7 @@ function Serve() {
             </div>
           </div>
         </div>
-        <div className="col-6 col-md-4 my-3">
+        <div data-aos="fade-up" data-aos-delay="300" className="col-6 col-md-4 my-3">
           <div className="card text-center p-3 border-0">
             <div style={{height:120}}>
               <img src="image/quality.gif" alt="" className="w-100 h-100 object-fit-contain"/>

@@ -95,16 +95,16 @@ function BreakFastFood() {
         </div>
       )}
 
-      <div className="d-flex justify-content-between align-items-center">
+      <div data-aos="zoom-in" className="d-flex justify-content-between align-items-center">
         <h2 className="m-0">All-Day Breakfast</h2>
         <NavLink to="/allmenu" className="nav-link">
           <p className="text-success fs-5 m-0">View All</p>
         </NavLink>
       </div>
 
-      <div className="d-flex justify-content-start overflow-x-scroll m-0 my-4">
+      <div className="d-flex justify-content-start overflow-x-scroll m-0 py-4">
         {breakfastFoods.map((food: Food) => (
-          <div key={food.id} className="col-9 col-md-5 col-lg-3 px-lg-4 mx-2 mx-md-3 mx-lg-0">
+          <div data-aos="zoom-in" key={food.id} className="col-9 col-md-5 col-lg-3 px-lg-4 mx-2 mx-md-3 mx-lg-0">
             <div className="card overflow-hidden">
               <div style={{ height: 220 }} className="p-3 border-success">
                 <img

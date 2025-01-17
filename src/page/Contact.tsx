@@ -1,10 +1,18 @@
+import { useEffect } from "react";
+
 function Contact() {
+  useEffect(()=>{
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    })
   return (
     <div
-      style={{ paddingTop: "120px" }}
+      style={{ paddingTop:"120px" }}
       className="bg-contact container-fluid d-flex justify-content-center align-items-center px-3 pb-5"
     >
-      <div className="col-md-7 shadow-lg p-4 p-md-5 mt-3 bg-body rounded-3">
+      <div data-aos="fade-up" className="col-md-7 shadow-lg p-4 p-md-5 mt-3 bg-body rounded-3">
         <form action="">
           <div className="row m-0">
             <div className="col-md-6 border-3 pe-md-5">

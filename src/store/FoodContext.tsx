@@ -20,6 +20,7 @@ interface CartItem extends Food {
 
 // Define the context value type
 interface FoodContextType {
+  setCart(arg0: never[]): unknown;
   foods: Food[];
   loading: boolean;
   error: string | null;
@@ -174,6 +175,7 @@ export const FoodProvider: React.FC<FoodProviderProps> = ({ children }) => {
         handleQuantityChange,
         handleDelete,
         searchByKhmerName,
+        setCart,
         selectedIds,
         totalPrice,
       }}

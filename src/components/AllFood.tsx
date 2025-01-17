@@ -104,7 +104,7 @@ const AllFood: React.FC<AllFoodProps> = ({ foods, loading, error, addToCart, car
       <div className="px-2">
         <div className="row justify-content-center m-0 my-4">
           {filteredFoods.map((food: Food) => (
-            <div key={food.id} className="col-12 col-md-5 col-lg-3 px-lg-4 mx-2 mx-md-3 mx-lg-0 my-2">
+            <div data-aos="fade-up"  key={food.id} className="col-12 col-md-5 col-lg-3 px-lg-4 mx-2 mx-md-3 mx-lg-0 my-2">
               <div className="card overflow-hidden">
                 <div style={{ height: 220 }} className="p-3 border-success">
                   <img

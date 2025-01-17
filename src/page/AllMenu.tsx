@@ -33,7 +33,7 @@ function AllMenu() {
 
   return (
     <div style={{ paddingTop: "130px" }}>
-      <div className="container">
+      <div data-aos="fade-up" className="container">
         <div className="text-center d-md-flex justify-content-between align-items-center border-bottom">
           <h1>
             Restaurant <span className="text-success">All menu</span>

@@ -1,7 +1,7 @@
 
 function PaymentPartner() {
   return (
-    <div className='container-fluid bg-wildlife '>
+    <div data-aos="zoom-in" className='container-fluid bg-wildlife '>
         <div className="container">
             <div className="row p-4 justify-content-between">
                 <div className="col-6">

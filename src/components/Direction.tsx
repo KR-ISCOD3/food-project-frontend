@@ -1,6 +1,6 @@
 const Direction:React.FC = () => {
   return (
-    <div className="mt-5 mt-lg-3 text-center px-4  pt-3">
+    <div  data-aos="fade-up" className="mt-5 mt-lg-3 text-center px-4  pt-3">
       <h1 className=" m-0 text-success ">Direction.</h1>
       <p className=" fs-5 text-secondary mx-auto">
         Find our restaurant at the heart of Royal Phnom Penh. We are located in

@@ -21,11 +21,8 @@ function MobileSignin() {
       <div className=" col-8 mx-auto d-grid text-center p-3 rounded-3 shadow">
         <NavLink to={"/signin"}>
           <button className="btn btn-outline-success rounded-5 px-5 mb-3 rounded-0  ">
-            Sign in
+            Get Start
           </button>
-        </NavLink>
-        <NavLink to={"/signup"}>
-          <button className="btn btn-success rounded-5 px-5">Sign Up</button>
         </NavLink>
       </div>
     </div>

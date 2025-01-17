@@ -16,7 +16,7 @@ function DinnerFood() {
   const { foods, cart, loading, error, addToCart } = useContext(FoodContext); // Access cart data from context
   const [showPopup, setShowPopup] = useState(false); // State for popup visibility
   const navigate = useNavigate(); // Navigate hook
-
+  const [message, setMessage] = useState(""); 
   // Show popup temporarily after adding to cart
   const handleAddToCart = (food: Food) => {
     // Check if the product is already in the cart
@@ -24,7 +24,12 @@ function DinnerFood() {
 
     if (!isAlreadyInCart) {
       addToCart(food); // Add item to cart
+      setMessage("✅ Added to Cart!");
       setShowPopup(true); // Show popup
+      setTimeout(() => setShowPopup(false), 3000); // Hide popup after 3 seconds
+    } else {
+      setMessage("❗ Item already in the cart");
+      setShowPopup(true); // Show popup with message for already added item
       setTimeout(() => setShowPopup(false), 3000); // Hide popup after 3 seconds
     }
   };
@@ -78,23 +83,25 @@ function DinnerFood() {
           className="position-fixed top-50 start-50 translate-middle bg-alert shadow rounded py-3 text-center px-5"
           style={{ zIndex: 1050 }}
         >
-          <h5 className="text-light mb-3">✅ Added to Cart!</h5>
-          <button className="btn btn-outline-light" onClick={handleCheckout}>
-            Checkout
-          </button>
+          <h5 className="text-light mb-3">{message}</h5>
+          {message === "✅ Added to Cart!" && (
+            <button className="btn btn-outline-light" onClick={handleCheckout}>
+              Checkout
+            </button>
+          )}
         </div>
       )}
 
-      <div className="d-flex justify-content-between align-items-center">
+      <div data-aos="zoom-in" className="d-flex justify-content-between align-items-center">
         <h2 className="m-0">Dinner Menu</h2>
         <NavLink to="/allmenu" className="nav-link">
           <p className="text-success fs-5 m-0">View All</p>
         </NavLink>
       </div>
 
-      <div className="d-flex justify-content-start overflow-x-scroll m-0 my-4">
+      <div className="d-flex justify-content-start overflow-x-scroll m-0 py-4">
         {dinnerFoods.map((food: Food) => (
-          <div key={food.id} className="col-9 col-md-5 col-lg-3 px-lg-4 mx-2 mx-md-3 mx-lg-0">
+          <div data-aos="zoom-in" key={food.id} className="col-9 col-md-5 col-lg-3 px-lg-4 mx-2 mx-md-3 mx-lg-0">
             <div className="card overflow-hidden">
               <div style={{ height: 220 }} className="p-3 border-success">
                 <img
