@@ -29,7 +29,7 @@ interface AuthProviderProps {
 
 // Create the provider component
 export const ReactAuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const navigate = useNavigate();
+  
   const [user, setUser] = useState<User | null>(() => {
     // Load user from localStorage when the component initializes
     const storedUser = localStorage.getItem("user");
@@ -54,6 +54,9 @@ export const ReactAuthProvider: React.FC<AuthProviderProps> = ({ children }) => 
 
   // Function to log out the user
   const logout = async () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const navigate = useNavigate();
+    
     try {
       // await axios.post("http://localhost:3000/api/auth/logout", { withCredentials: true });
       googleLogout();

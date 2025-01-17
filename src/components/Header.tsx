@@ -68,6 +68,7 @@ const Header = () => {
   const handleLogout = () => {
     logout(); // Logs the user out from Google 
     setIsloggin(false);
+    navigate("/");
     console.log("User logged out");
   };
   return (
