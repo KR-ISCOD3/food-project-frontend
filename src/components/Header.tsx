@@ -159,7 +159,7 @@ const Header = () => {
                 <div className="d-flex align-items-center">
                   <div className="user-account rounded-circle overflow-hidden border border-2">
                     <img
-                      src={user?.picture || "default-avatar.png"} // Display user avatar
+                      src={user?.avatar || "default-avatar.png"} // Display user avatar
                       className="w-100 h-100 object-fit-cover"
                     />
                   </div>
