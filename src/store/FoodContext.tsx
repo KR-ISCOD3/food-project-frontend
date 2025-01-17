@@ -44,7 +44,7 @@ export const FoodContext = createContext<FoodContextType>({
   error: null,
   cart: [],
   addToCart: () => {},
-  setCart: (cart: any[]) => {},
+  setCart: () => {},
   removeFromCart: () => {},
   getCartTotal: () => 0,
   handleSelectAll: () => {},
