@@ -12,13 +12,13 @@ import Loading from "./page/Loading";
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 2000); // Show loading for 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Show loading for 2 seconds
 
-  //   return () => clearTimeout(timer); // Cleanup the timer
-  // }, []);
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
 
   return (
     <>
