@@ -39,7 +39,7 @@ function Account() {
             }}
             className="bg-success mx-auto rounded-circle overflow-hidden border border-2"
           >
-            <img src={user?.avatar} alt="User Avatar" className="w-100 h-100 object-fit-cover" />
+            <img src={user?.picture} alt="User Avatar" className="w-100 h-100 object-fit-cover" />
           </div>
           <button className="btn btn-success px-4 py-1 mt-2 rounded-5 d-flex align-items-center">
             <label htmlFor="fileInput" style={{ cursor: "pointer" }}>
