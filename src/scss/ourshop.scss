@@ -22,7 +22,7 @@
 //     background-position: center;
 // }
 .shape {
-  background: url(image/khmerFood.png);
+  background: url(../assets/khmerFood.png);
   background-size: cover;
   background-repeat: no-repeat;
   animation: morph 8s ease-in-out infinite;
@@ -42,7 +42,7 @@
 @keyframes morph {
   0% {
 			border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
-			background: url(image/khmerFood.png);
+			background: url(../assets/khmerFood.png);
             background-size: cover;
             background-repeat: no-repeat;
             transform: scale(1.1);
@@ -50,7 +50,7 @@
 	
 	50% {
 			border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
-			background: url(image/khmerFood.png);
+			background: url(../assets/khmerFood.png);
             background-size: cover;
             background-repeat: no-repeat;
             transform: scale(1);
@@ -58,7 +58,7 @@
   
 	100% {
 		border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
-		background: url(image/khmerFood.png);
+		background: url(../assets/khmerFood.png);
         background-size: cover;
         background-repeat: no-repeat;
         transform: scale(1.1);

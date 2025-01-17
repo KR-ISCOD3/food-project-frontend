@@ -3,14 +3,14 @@
 }
 
 .bg-wildlife {
-  background: url(image/bggreen.png);
+  background: url(../assets/bggreen.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .bg-contact {
-  background: url(image/contactbg.png);
+  background: url(../assets/contactbg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
