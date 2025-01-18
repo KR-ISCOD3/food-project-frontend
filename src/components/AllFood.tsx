@@ -103,37 +103,44 @@ const AllFood: React.FC<AllFoodProps> = ({ foods, loading, error, addToCart, car
 
       <div className="px-2">
         <div className="row justify-content-center m-0 my-4">
-          {filteredFoods.map((food: Food) => (
-            <div data-aos="fade-up"  key={food.id} className="col-12 col-md-5 col-lg-3 px-lg-4 mx-2 mx-md-3 mx-lg-0 my-2">
-              <div className="card overflow-hidden">
-                <div style={{ height: 220 }} className="p-3 border-success">
-                  <img
-                    src={food.image}
-                    alt={food.name}
-                    className="w-100 h-100 object-fit-cover rounded-2"
-                  />
-                </div>
-                <div className="card-body px-3 py-2">
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div>
-                      <p className="fs-5 m-0 text-danger">${food.price.toFixed(2)}</p>
-                      <p className="m-0 text-secondary">{food.category}</p>
-                      <h6 className="text-1line" style={{ lineHeight: 2 }}>
-                        {food.name}
-                      </h6>
+          {
+           (filteredFoods.length == 0) 
+           ?
+           (<div className="text-center py-5">
+              <h1>Food not founds😒</h1>
+              <p>Search another foods</p>
+           </div>):
+            filteredFoods.map((food: Food) => (
+              <div data-aos="fade-up"  key={food.id} className="col-12 col-md-5 col-lg-3 px-lg-4 mx-2 mx-md-3 mx-lg-0 my-2">
+                <div className="card overflow-hidden">
+                  <div style={{ height: 220 }} className="p-3 border-success">
+                    <img
+                      src={food.image}
+                      alt={food.name}
+                      className="w-100 h-100 object-fit-cover rounded-2"
+                    />
+                  </div>
+                  <div className="card-body px-3 py-2">
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>
+                        <p className="fs-5 m-0 text-danger">${food.price.toFixed(2)}</p>
+                        <p className="m-0 text-secondary">{food.category}</p>
+                        <h6 className="text-1line" style={{ lineHeight: 2 }}>
+                          {food.name}
+                        </h6>
+                      </div>
+                      <button
+                        className="btn bg-success text-light px-3 mt-3"
+                        onClick={() => handleAddToCart(food)}
+                      >
+                        Add
+                        <MdOutlineAddShoppingCart className="ms-2" />
+                      </button>
                     </div>
-                    <button
-                      className="btn bg-success text-light px-3 mt-3"
-                      onClick={() => handleAddToCart(food)}
-                    >
-                      Add
-                      <MdOutlineAddShoppingCart className="ms-2" />
-                    </button>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>
