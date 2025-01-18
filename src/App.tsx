@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import "./scss/meterial.scss";
 import "./scss/header.scss";
 import "./scss/app.scss";
